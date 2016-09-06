@@ -6,7 +6,7 @@ const pathToRegexp = require('path-to-regexp')
 const readFile = pify(fs.readFile);
 
 const api = ({ authorId, area }) =>
-  readFile(`./dump/${authorId}-${area}.json`)
+  readFile(`./node_modules/jsunderhood/dump/${authorId}-${area}.json`)
     .then(str => JSON.parse(str));
 
 const urlReg = pathToRegexp('/:authorId/:area', ['authorId', 'area']);
