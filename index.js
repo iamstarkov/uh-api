@@ -6,13 +6,13 @@ const pathToRegexp = require('path-to-regexp')
 const readFile = pify(fs.readFile);
 
 const api = ({ authorId, area }) =>
-  readFile(`./node_modules/jsunderhood/dump/${authorId}-${area}.json`)
+  readFile(fs.join(__dirname, `./node_modules/jsunderhood/dump/${authorId}-${area}.json`))
     .then(str => JSON.parse(str));
 
 const urlReg = pathToRegexp('/:authorId/:area', ['authorId', 'area']);
 
 const parse = url => {
-  const [, authorId, area ] = urlReg.exec(url);
+  const [_, authorId, area ] = urlReg.exec(url);
   return { authorId, area };
 }
 
