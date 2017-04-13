@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "jsunderhood": "github:iamstarkov/jsunderhood#master",
-    "micro": "^6.0.2",
+    "micro": "^7.3.2",
     "path-to-regexp": "^1.5.3",
     "pify": "^2.3.0"
   }
